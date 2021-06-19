@@ -73,7 +73,7 @@ struct AddItemView: View {
             VStack {
                 
                 //: ITEM NAME
-                TextField("Name", text: $name, onCommit: { if name != "" { addItem() } })
+                TextField("Name of \(kind)", text: $name, onCommit: { if name != "" { addItem() } })
                     .foregroundColor(Color.accentColor)
                     .font(.system(size: 18, weight: .bold))
                     .padding()
@@ -82,6 +82,7 @@ struct AddItemView: View {
                     )
                     .cornerRadius(10)
                     .autocapitalization(.words)
+                
                 
                 //: ITEM KIND
                 Picker("Kind", selection: $kind) {
@@ -96,7 +97,7 @@ struct AddItemView: View {
                 
                 
             } //: VSTACK
-            .navigationBarTitle("Add Item", displayMode: .inline)
+            .navigationBarTitle("Add \(kind)", displayMode: .inline)
             .padding(.horizontal)
             .padding(.vertical, 20)
             .toolbar {
