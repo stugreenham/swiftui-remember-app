@@ -12,9 +12,12 @@ struct AddItemView: View {
     //: MARK: - PROPERTIES
     
     @State private var name: String = ""
-    @State private var kind: String = "Movie"
+    @State private var kind: String = ""
+    @State private var meta: String = ""
     @State var isError: Bool = false
     let kinds = ["App", "Book", "Movie", "Show"]
+    let appMeta = ["AppleTV", "Disney+", "Netflix", "Prime", "Other"]
+    let movieMeta = ["Drama", "Comedy", "Action", "Fantasy", "Horror", "Romance", "Western", "Thriller"]
     
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var isPresented: Bool
@@ -29,7 +32,7 @@ struct AddItemView: View {
     private func addItem() {
         withAnimation {
             
-            if name != "" {
+            if (name != "" && kind != "")  {
                 
                 // ADD ITEM TO COREDATA
                 let newItem = Item(context: viewContext)
@@ -37,6 +40,7 @@ struct AddItemView: View {
                 newItem.timestamp = Date()
                 newItem.name = name
                 newItem.kind = kind
+                newItem.meta = meta
                 newItem.completion = false
 
                 do {
@@ -53,7 +57,8 @@ struct AddItemView: View {
                 
                 // RESET FORM VALUES
                 name = ""
-                kind = "Movie"
+                kind = ""
+                meta = ""
                 feedback.notificationOccurred(.success)
                 
             } else {
@@ -70,19 +75,10 @@ struct AddItemView: View {
     var body: some View {
         NavigationView {
             
-            VStack {
+            Form {
                 
                 //: ITEM NAME
-                TextField("Name of \(kind)", text: $name, onCommit: { if name != "" { addItem() } })
-                    .foregroundColor(Color.accentColor)
-                    .font(.system(size: 18, weight: .bold))
-                    .padding()
-                    .background(
-                        Color(UIColor.secondarySystemBackground)
-                    )
-                    .cornerRadius(10)
-                    .autocapitalization(.words)
-                
+                TextField("Title", text: $name, onCommit: { if name != "" { addItem() } })
                 
                 //: ITEM KIND
                 Picker("Kind", selection: $kind) {
@@ -90,16 +86,31 @@ struct AddItemView: View {
                         Text($0)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.top, 8)
-                
-                Spacer()
+                .listStyle(GroupedListStyle())
                 
                 
-            } //: VSTACK
-            .navigationBarTitle("Add \(kind)", displayMode: .inline)
-            .padding(.horizontal)
-            .padding(.vertical, 20)
+                //: OPTIONAL META DATA
+                
+                if (kind == "Show") {
+                    //: ITEM KIND
+                    Picker("Platform (Optional)", selection: $meta) {
+                        ForEach(appMeta, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                
+                if (kind == "Movie") {
+                    //: ITEM KIND
+                    Picker("Genre (Optional)", selection: $meta) {
+                        ForEach(movieMeta, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                
+            }
+            .navigationBarTitle("Add Item", displayMode: .inline)
             .toolbar {
                 #if os(iOS)
                 ToolbarItem(placement: .navigationBarLeading) {
