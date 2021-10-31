@@ -22,13 +22,13 @@ struct ListRowItemView: View {
         
         // modify the base string for a movie entry
         if (kind == "Movie" && meta != "") {
-            print("Meta: \(meta)")
+            //print("Meta: \(meta)")
             subCopy = "\(meta) \(kind)" // Action Movie
         }
         
         // modify the base string for a show entry
         if (kind == "TV Show" && meta != "") {
-            print("Meta: \(meta)")
+            //print("Meta: \(meta)")
             subCopy = "\(kind) on \(meta)" // Show on Netflix
         }
         

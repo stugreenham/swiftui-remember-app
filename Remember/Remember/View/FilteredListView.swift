@@ -13,9 +13,8 @@ struct FilteredListView: View {
     
     // Core Data
     @Environment(\.managedObjectContext) private var viewContext
-    
     var fetchRequest: FetchRequest<Item>
-    //var showArchived: Bool
+    
     
     init(filter: String, showArchived: Bool) {
         print(String(showArchived))
@@ -43,16 +42,10 @@ struct FilteredListView: View {
     
     // Delete Item
     private func deleteItem(item: Item) {
-        viewContext.delete(item)
-        saveItem()
-//        do {
-//            try self.viewContext.save()
-//        } catch {
-//            let error = error as NSError
-//            print(error.debugDescription)
-//        }
-        
-        //itemToDelete = nil
+        withAnimation {
+            viewContext.delete(item)
+            saveItem()
+        }
     }
     
     // Save Item
