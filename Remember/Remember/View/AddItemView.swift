@@ -15,7 +15,7 @@ struct AddItemView: View {
     @State private var kind: String = ""
     @State private var meta: String = ""
     @State var isError: Bool = false
-    let kinds = ["App", "Book", "Movie", "Show"]
+    let kinds = ["App", "Book", "Movie", "TV Show"]
     let appMeta = ["AppleTV", "Disney+", "Netflix", "Prime", "Other"]
     let movieMeta = ["Drama", "Comedy", "Action", "Fantasy", "Horror", "Romance", "Western", "Thriller"]
     
@@ -41,7 +41,7 @@ struct AddItemView: View {
                 newItem.name = name
                 newItem.kind = kind
                 newItem.meta = meta
-                newItem.completion = false
+                newItem.archived = false
 
                 do {
                     try viewContext.save()
@@ -91,7 +91,7 @@ struct AddItemView: View {
                 
                 //: OPTIONAL META DATA
                 
-                if (kind == "Show") {
+                if (kind == "TV Show") {
                     //: ITEM KIND
                     Picker("Platform (Optional)", selection: $meta) {
                         ForEach(appMeta, id: \.self) {

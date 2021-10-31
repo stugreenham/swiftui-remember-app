@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2779D5DB272BD3AF004396F6 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779D5DA272BD3AF004396F6 /* TabsView.swift */; };
+		2779D5DF272C2A81004396F6 /* FilteredListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779D5DE272C2A81004396F6 /* FilteredListView.swift */; };
 		27BD78052636F3390044BC3D /* RememberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD78042636F3390044BC3D /* RememberApp.swift */; };
 		27BD78072636F3390044BC3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD78062636F3390044BC3D /* ContentView.swift */; };
 		27BD78092636F33A0044BC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BD78082636F33A0044BC3D /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2779D5DA272BD3AF004396F6 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		2779D5DE272C2A81004396F6 /* FilteredListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListView.swift; sourceTree = "<group>"; };
 		27BD78012636F3390044BC3D /* Remember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD78042636F3390044BC3D /* RememberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberApp.swift; sourceTree = "<group>"; };
 		27BD78062636F3390044BC3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				27BD781D2636F7970044BC3D /* AddItemView.swift */,
 				27BD7833263871AF0044BC3D /* ItemListEmptyView.swift */,
 				27C9FADA26395A3F00E0ADC0 /* ListRowItemView.swift */,
+				2779D5DA272BD3AF004396F6 /* TabsView.swift */,
+				2779D5DE272C2A81004396F6 /* FilteredListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,7 +205,9 @@
 				27BD780E2636F33A0044BC3D /* Persistence.swift in Sources */,
 				27BD78072636F3390044BC3D /* ContentView.swift in Sources */,
 				27BD78052636F3390044BC3D /* RememberApp.swift in Sources */,
+				2779D5DF272C2A81004396F6 /* FilteredListView.swift in Sources */,
 				27BD7834263871AF0044BC3D /* ItemListEmptyView.swift in Sources */,
+				2779D5DB272BD3AF004396F6 /* TabsView.swift in Sources */,
 				27C9FADB26395A3F00E0ADC0 /* ListRowItemView.swift in Sources */,
 				27BD781E2636F7970044BC3D /* AddItemView.swift in Sources */,
 			);
@@ -259,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -314,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -336,7 +344,7 @@
 				DEVELOPMENT_TEAM = Y2CV739CMW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Remember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,7 +369,7 @@
 				DEVELOPMENT_TEAM = Y2CV739CMW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Remember/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
