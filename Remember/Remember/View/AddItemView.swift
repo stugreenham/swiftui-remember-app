@@ -42,6 +42,7 @@ struct AddItemView: View {
                 newItem.kind = kind
                 newItem.meta = meta
                 newItem.archived = false
+                newItem.link = ""
 
                 do {
                     try viewContext.save()

@@ -46,8 +46,10 @@ struct ListRowItemView: View {
                     
                 //: ITEM NAME
                 Text(item.name ?? "Unknown")
-                    .font(.headline)
-                    .fontWeight(.bold)
+//                    .font(.headline)
+//                    .fontWeight(.bold)
+                    .font(.system(.headline, design: .rounded))
+                    .fontWeight(.semibold)
                 
                 Spacer()
                     .frame(height: 2)
@@ -66,11 +68,12 @@ struct ListRowItemView: View {
             
         } //: HSTACK
         .contentShape(Rectangle())
-        .padding(.vertical, 4)
-        .background(Color.white.opacity(0))
-        .onTapGesture {
-            print(item)
-        }
+//        .padding(.vertical, 6)
+        .padding(12)
+        .background(Color.gray.opacity(0.1).cornerRadius(8))
+//        .onTapGesture {
+//            print(item)
+//        }
     }
 }
-
+    

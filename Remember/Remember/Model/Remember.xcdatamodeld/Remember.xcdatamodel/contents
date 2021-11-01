@@ -4,11 +4,12 @@
         <attribute name="archived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="kind" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="meta" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

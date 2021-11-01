@@ -21,6 +21,7 @@ struct PersistenceController {
             newItem.meta = "Action"
             newItem.id = UUID()
             newItem.archived = false
+            newItem.link = ""
         }
         do {
             try viewContext.save()

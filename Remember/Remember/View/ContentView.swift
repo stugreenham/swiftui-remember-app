@@ -16,21 +16,8 @@ struct ContentView: View {
     @State var name: String = ""
     @State var kind: String = ""
     
-    // FETCHING DATA
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
-    
     // TOGGLE FOR MODAL SHEET
     @State private var showingSheet = false
-    
-    // TOGGLE FOR SHOWING ACTION SHEET
-    //@State private var showingActionSheet = false
-    
-    // VAR TO HOLD TAPPED ITEM DATA
-    //@State var itemToDelete: Item?
     
     // GET LIGHT/DARK MODE
     @Environment(\.colorScheme) var colorScheme
@@ -42,40 +29,6 @@ struct ContentView: View {
     var showArchived: Bool = false
     
     
-    
-    //: MARK: - FUNCTION
-
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-    
-    // Delete an item from CoreData
-    // From https://www.youtube.com/watch?v=zx3qWNU2NnY&t=1s
-//    private func deleteProject(item: Item) {
-//        viewContext.delete(item)
-//        do {
-//            try self.viewContext.save()
-//        } catch {
-//            let error = error as NSError
-//            print(error.debugDescription)
-//        }
-//
-//        //itemToDelete = nil
-//    }
-    
-    
-    
     //: MARK: - BODY
     
     var body: some View {
@@ -83,62 +36,31 @@ struct ContentView: View {
             
             VStack {
                 FilteredListView(filter: kindFilter, showArchived: showArchived)
-                
-                
-//                List {
-//                    ForEach(items) { item in
-//
-//                        ListRowItemView(item: item)
-//                            .swipeActions(edge: .leading) {
-//                                Button {
-//                                    print("archive item")
-//                                } label: {
-//                                    Label("Add", systemImage: "archivebox")
-//                                }
-//                                .tint(.indigo)
-//                            }
-//                            .swipeActions(edge: .trailing) {
-//
-//                                // delete item
-//                                Button {
-//                                    print("delete item \(item.name ?? "")")
-//                                    self.deleteProject(item: item)
-//                                } label: {
-//                                    Label("Delete", systemImage: "trash")
-//                                }
-//                                .tint(.red)
-//
-//                                // archive item
-//                                Button {
-//                                    print("edit item")
-//                                } label: {
-//                                    Label("Edit", systemImage: "pencil.circle")
-//                                }
-//                                .tint(.gray)
-//
-//                            }
-//                            .onTapGesture {
-//                                self.showingActionSheet = true
-//                                //itemToDelete = item
-//                                print(item)
-//                            }
-//
-//                    } // LOOP
-//                    .onDelete(perform: deleteItems)
-//
-//                } //: LIST
-//                //.listStyle(InsetGroupedListStyle())
-//                .listStyle(PlainListStyle())
-//                .overlay(
-//                    ItemListEmptyView()
-//                        .background(colorScheme == .dark ? Color(.systemBackground) : Color(.secondarySystemBackground))
-//                        .opacity(items.isEmpty ? 1 : 0)
-//                , alignment: .top)
-                
             } //: VSTACK
-            .navigationBarTitle(showArchived ? "Archived" : "Remember", displayMode: .large)
+//            .navigationBarTitle(showArchived ? "Archived" : "Your Items", displayMode: showArchived ? .inline : .large)
+            .navigationBarTitle("", displayMode: .inline)
+//            .navigationBarHidden(true)
             .toolbar {
-                #if os(iOS)                
+                #if os(iOS)
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    HStack {
+                        Text(showArchived ? "Archived" : "Remember")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                    }
+                    .offset(x: 12)
+                }
+                
+//                ToolbarItem(placement: .principal) {
+//                    HStack {
+//                        Image("logo")
+//                            .resizable()
+//                            .foregroundColor(Color("color-brand"))
+//                            .scaledToFill()
+//                    }
+//                    .frame(width: 16, height: 16)
+//                }
+                
                 // FILTER
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
@@ -177,6 +99,7 @@ struct ContentView: View {
                             
                         } label: {
                             Image(systemName: "line.3.horizontal.decrease.circle")
+                                .offset(x: -12)
                         }
                     } else {
                         EmptyView()
@@ -190,6 +113,7 @@ struct ContentView: View {
                         showingSheet = true
                     }, label: {
                         Image(systemName: "plus.circle")
+                            .offset(x: -12)
                     })
                 }
                 #endif
@@ -199,7 +123,7 @@ struct ContentView: View {
             })
                 
         } //: NAVIGATION
-        .navigationViewStyle(StackNavigationViewStyle())
+//        .navigationViewStyle(StackNavigationViewStyle())
     } //: BODY
 
     

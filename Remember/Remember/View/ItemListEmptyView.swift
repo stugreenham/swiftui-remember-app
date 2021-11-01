@@ -37,7 +37,7 @@ struct ItemListEmptyView: View {
                 
                 Spacer()
             }
-            .offset(y: -24)
+//            .offset(y: -24)
             Spacer()
         }
         
