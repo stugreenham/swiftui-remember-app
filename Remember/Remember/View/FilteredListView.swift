@@ -95,7 +95,8 @@ struct FilteredListView: View {
                                 print("archive item")
                                 archiveItem(item: item)
                             } label: {
-                                Label("Add", systemImage: "archivebox")
+                                Image(systemName: "archivebox")
+                                // Label("Add", systemImage: "archivebox")
                             }
                             .tint(.indigo)
 
@@ -107,94 +108,33 @@ struct FilteredListView: View {
                                 print("delete item \(item.name ?? "")")
                                 deleteItem(item: item)
                             } label: {
-                                Label("Delete", systemImage: "trash")
+                                Image(systemName: "trash")
+                                // Label("Delete", systemImage: "trash")
                             }
                             .tint(.red)
 
-                            // edit item
-                            Button {
-                                print("edit item")
-                            } label: {
-                                Label("Edit", systemImage: "pencil.circle")
-                            }
-                            .tint(.gray)
+//                            // edit item
+//                            Button {
+//                                print("edit item")
+//                            } label: {
+//                                Label("Edit", systemImage: "pencil.circle")
+//                            }
+//                            .tint(.gray)
 
                         }
-                        .onTapGesture {
-                            //self.showingActionSheet = true
-                            //itemToDelete = item
-                            //print(item)
-                            print("test")
-                            print("fetchRequest.wrappedValue: \(fetchRequest.wrappedValue.count)")
-                        }
+//                        .onTapGesture {
+//                            print("test")
+//                            print("fetchRequest.wrappedValue: \(fetchRequest.wrappedValue.count)")
+//                        }
                 } //: FOREACH
                 .listRowSeparator(.hidden)
+                
+                Spacer(minLength: 20)
+                    .listRowSeparator(.hidden)
             } //: LIST
             .listStyle(PlainListStyle())
-            //        .onTapGesture(perform: {
-            //            let resultCount = fetchRequest.wrappedValue.count
-            //            print(resultCount)
-            //            if resultCount == 0 {
-            //                displayEmptyState = true
-            //            }
-            //        })
             
         } //: IF
-
-        
-        
-//        .onAppear(perform: {
-//            UITableView.appearance().contentInset.top = -40
-//        })
-        
-//        VStack {
-//
-//            List(fetchRequest.wrappedValue, id: \.self) { item in
-//                ListRowItemView(item: item)
-////                    .listRowSeparator(.hidden)
-//                    .swipeActions(edge: .leading) {
-//
-//                        // archive item
-//                        Button {
-//                            print("archive item")
-//                            archiveItem(item: item)
-//                        } label: {
-//                            Label("Add", systemImage: "archivebox")
-//                        }
-//                        .tint(.indigo)
-//
-//                    }
-//                    .swipeActions(edge: .trailing) {
-//
-//                        // delete item
-//                        Button {
-//                            print("delete item \(item.name ?? "")")
-//                            deleteItem(item: item)
-//                        } label: {
-//                            Label("Delete", systemImage: "trash")
-//                        }
-//                        .tint(.red)
-//
-//                        // edit item
-//                        Button {
-//                            print("edit item")
-//                        } label: {
-//                            Label("Edit", systemImage: "pencil.circle")
-//                        }
-//                        .tint(.gray)
-//
-//                    }
-//                    .onTapGesture {
-//                        //self.showingActionSheet = true
-//                        //itemToDelete = item
-//                        print(item)
-//                    }
-//            }
-////            .listStyle(PlainListStyle())
-////            .listStyle(GroupedListStyle())
-////            .listStyle(InsetListStyle())
-//        }
-////        .padding()
         
     }
 }

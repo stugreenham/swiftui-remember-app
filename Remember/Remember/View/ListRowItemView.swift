@@ -70,7 +70,8 @@ struct ListRowItemView: View {
         .contentShape(Rectangle())
 //        .padding(.vertical, 6)
         .padding(12)
-        .background(Color.gray.opacity(0.1).cornerRadius(8))
+        //.background(Color.gray.opacity(0.1).cornerRadius(8))
+        .background(Color("color-cell").cornerRadius(8))
 //        .onTapGesture {
 //            print(item)
 //        }

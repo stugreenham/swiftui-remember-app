@@ -24,6 +24,7 @@ struct ContentView: View {
     
     // var to hold the filter type to pass into filteredlistview
     @State private var kindFilter = "All"
+    @State private var filterOn: Bool = false
     
     // var to hold the tab bar state (active vs archived)
     var showArchived: Bool = false
@@ -37,9 +38,7 @@ struct ContentView: View {
             VStack {
                 FilteredListView(filter: kindFilter, showArchived: showArchived)
             } //: VSTACK
-//            .navigationBarTitle(showArchived ? "Archived" : "Your Items", displayMode: showArchived ? .inline : .large)
             .navigationBarTitle("", displayMode: .inline)
-//            .navigationBarHidden(true)
             .toolbar {
                 #if os(iOS)
                 
@@ -48,18 +47,8 @@ struct ContentView: View {
                         Text(showArchived ? "Archived" : "Remember")
                             .font(.system(size: 24, weight: .bold, design: .rounded))
                     }
-                    .offset(x: 12)
+                    .offset(x: 8)
                 }
-                
-//                ToolbarItem(placement: .principal) {
-//                    HStack {
-//                        Image("logo")
-//                            .resizable()
-//                            .foregroundColor(Color("color-brand"))
-//                            .scaledToFill()
-//                    }
-//                    .frame(width: 16, height: 16)
-//                }
                 
                 // FILTER
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -69,37 +58,42 @@ struct ContentView: View {
                             
                             Button(action: {
                                 self.kindFilter = "All"
+                                self.filterOn = false
                             }) {
                                 Text("All") //Label("All", systemImage: "plus.circle")
                             }
                             
                             Button(action: {
                                 self.kindFilter = "App"
+                                self.filterOn = true
                             }) {
                                 Label("Apps", systemImage: "iphone.homebutton")
                             }
                             
                             Button(action: {
                                 self.kindFilter = "Book"
+                                self.filterOn = true
                             }) {
                                 Label("Books", systemImage: "book")
                             }
                             
                             Button(action: {
                                 self.kindFilter = "Movie"
+                                self.filterOn = true
                             }) {
                                 Label("Movies", systemImage: "film")
                             }
                             
                             Button(action: {
                                 self.kindFilter = "TV Show"
+                                self.filterOn = true
                             }) {
                                 Label("TV Shows", systemImage: "tv")
                             }
                             
                         } label: {
-                            Image(systemName: "line.3.horizontal.decrease.circle")
-                                .offset(x: -12)
+                            Image(systemName: filterOn ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                                .offset(x: -4)
                         }
                     } else {
                         EmptyView()
@@ -113,7 +107,7 @@ struct ContentView: View {
                         showingSheet = true
                     }, label: {
                         Image(systemName: "plus.circle")
-                            .offset(x: -12)
+                            .offset(x: -8)
                     })
                 }
                 #endif
@@ -123,7 +117,6 @@ struct ContentView: View {
             })
                 
         } //: NAVIGATION
-//        .navigationViewStyle(StackNavigationViewStyle())
     } //: BODY
 
     
