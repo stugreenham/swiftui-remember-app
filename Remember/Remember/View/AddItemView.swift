@@ -26,6 +26,9 @@ struct AddItemView: View {
         name.isEmpty
     }
     
+    // Handles
+    @FocusState private var isNameFocused: Bool
+        
     
     //: MARK: - FUNCTION
     
@@ -80,6 +83,8 @@ struct AddItemView: View {
                 
                 //: ITEM NAME
                 TextField("Title", text: $name, onCommit: { if name != "" { addItem() } })
+                    .focused($isNameFocused)
+                    .submitLabel(.continue)
                 
                 //: ITEM KIND
                 Picker("Kind", selection: $kind) {
@@ -87,7 +92,6 @@ struct AddItemView: View {
                         Text($0)
                     }
                 }
-                .listStyle(GroupedListStyle())
                 
                 
                 //: OPTIONAL META DATA
@@ -112,6 +116,11 @@ struct AddItemView: View {
                 
             }
             .navigationBarTitle("Add Item", displayMode: .inline)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    isNameFocused = true
+                }
+            }
             .toolbar {
                 #if os(iOS)
                 ToolbarItem(placement: .navigationBarLeading) {
