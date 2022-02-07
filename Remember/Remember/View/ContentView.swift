@@ -10,7 +10,6 @@ import CoreData
 
 struct ContentView: View {
     
-    
     //: MARK: - PROPERTIES
     
     @State var name: String = ""
@@ -60,7 +59,7 @@ struct ContentView: View {
                                 self.kindFilter = "All"
                                 self.filterOn = false
                             }) {
-                                Text("All") //Label("All", systemImage: "plus.circle")
+                                Text("All")
                             }
                             
                             Button(action: {

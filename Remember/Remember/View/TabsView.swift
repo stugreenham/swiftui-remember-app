@@ -41,7 +41,7 @@ struct TabsView: View {
             
         }
         .overlay( // Overlay the custom TabView component here
-            Color("color-tabview") // Base color for Tab Bar
+            Color.colorTabView // Base color for Tab Bar
                 .edgesIgnoringSafeArea(.vertical)
                 .frame(height: 50) // Match Height of native bar
                 .shadow(color: .black.opacity(0.05), radius: 30, x: 0, y: -20)
@@ -57,7 +57,7 @@ struct TabsView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25, alignment: .center)
-                            .foregroundColor(Color("color-tab-icon"))
+                            .foregroundColor(Color.colorTabIcon)
                             .opacity(selection == 0 ? 1 : 0.4)
                     })
                     Spacer()
@@ -70,7 +70,7 @@ struct TabsView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25, alignment: .center)
-                            .foregroundColor(Color("color-tab-icon"))
+                            .foregroundColor(Color.colorTabIcon)
                             .opacity(selection == 1 ? 1 : 0.4)
                     })
                     
@@ -78,7 +78,7 @@ struct TabsView: View {
 
                 })
         ,alignment: .bottom) // Align the overlay to bottom to ensure tab bar stays pinned.
-        
+            
     }
 }
 

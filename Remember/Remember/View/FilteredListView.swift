@@ -98,7 +98,8 @@ struct FilteredListView: View {
                                 Image(systemName: "archivebox")
                                 // Label("Add", systemImage: "archivebox")
                             }
-                            .tint(.indigo)
+//                            .tint(.indigo)
+                            .tint(.colorBrand)
 
                         }
                         .swipeActions(edge: .trailing) {

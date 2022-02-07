@@ -3,4 +3,54 @@
    uuid = "1FE2100C-65A8-430C-9C8F-0178862A862B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95422836-B40E-40F1-844D-7D79A3128E01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Remember/View/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "ContentView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "95422836-B40E-40F1-844D-7D79A3128E01 - 53159939559f503e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Remember.ContentView.colorScheme.getter : SwiftUI.ColorScheme"
+                  moduleName = "Remember"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stu.greenham/App%20Development/Personal%20Projects/swiftui-remember-app/Remember/Remember/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "167">
+               </Location>
+               <Location
+                  uuid = "95422836-B40E-40F1-844D-7D79A3128E01 - 7f2f4dfb11bb0e9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Remember.ContentView.init() -&gt; Remember.ContentView"
+                  moduleName = "Remember"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stu.greenham/App%20Development/Personal%20Projects/swiftui-remember-app/Remember/Remember/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "233">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
