@@ -134,6 +134,10 @@ struct FilteredListView: View {
                     .listRowSeparator(.hidden)
             } //: LIST
             .listStyle(PlainListStyle())
+//            .refreshable {
+//                self.viewContext.refreshAllObjects()
+//                print("reloading")
+//            }
             
         } //: IF
         

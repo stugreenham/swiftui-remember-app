@@ -85,6 +85,7 @@ struct AddItemView: View {
                 TextField("Title", text: $name, onCommit: { if name != "" { addItem() } })
                     .focused($isNameFocused)
                     .submitLabel(.continue)
+                    .textInputAutocapitalization(.words)
                 
                 //: ITEM KIND
                 Picker("Kind", selection: $kind) {
@@ -96,19 +97,19 @@ struct AddItemView: View {
                 
                 //: OPTIONAL META DATA
                 
-                if (kind == "TV Show") {
-                    //: ITEM KIND
-                    Picker("Platform (Optional)", selection: $meta) {
-                        ForEach(appMeta, id: \.self) {
+                if (kind == "Movie") {
+                    //: ITEM GENRE
+                    Picker("Genre (Optional)", selection: $meta) {
+                        ForEach(movieMeta, id: \.self) {
                             Text($0)
                         }
                     }
                 }
                 
-                if (kind == "Movie") {
-                    //: ITEM KIND
-                    Picker("Genre (Optional)", selection: $meta) {
-                        ForEach(movieMeta, id: \.self) {
+                if (kind == "TV Show") {
+                    //: ITEM PLATFORM
+                    Picker("Platform (Optional)", selection: $meta) {
+                        ForEach(appMeta, id: \.self) {
                             Text($0)
                         }
                     }
