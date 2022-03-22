@@ -22,6 +22,7 @@
 		27E7AD6127ADDC54002202DE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AD6027ADDC54002202DE /* WelcomeView.swift */; };
 		27E7AD6327ADDC91002202DE /* WelcomeRowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AD6227ADDC91002202DE /* WelcomeRowDetailView.swift */; };
 		27E7AD6527ADDDF5002202DE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AD6427ADDDF5002202DE /* Extensions.swift */; };
+		27E7AD9E27B13650002202DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7AD9D27B13650002202DE /* SettingsView.swift */; };
 		27F6770226A57D6800C2F4FC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F6770126A57D6800C2F4FC /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		27E7AD6027ADDC54002202DE /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		27E7AD6227ADDC91002202DE /* WelcomeRowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRowDetailView.swift; sourceTree = "<group>"; };
 		27E7AD6427ADDDF5002202DE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		27E7AD9D27B13650002202DE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		27F676FF26A57D6300C2F4FC /* Remember.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Remember.entitlements; sourceTree = "<group>"; };
 		27F6770126A57D6800C2F4FC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				2779D5DE272C2A81004396F6 /* FilteredListView.swift */,
 				27E7AD6027ADDC54002202DE /* WelcomeView.swift */,
 				27E7AD6227ADDC91002202DE /* WelcomeRowDetailView.swift */,
+				27E7AD9D27B13650002202DE /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				27BD78052636F3390044BC3D /* RememberApp.swift in Sources */,
 				2779D5DF272C2A81004396F6 /* FilteredListView.swift in Sources */,
 				27E7AD6127ADDC54002202DE /* WelcomeView.swift in Sources */,
+				27E7AD9E27B13650002202DE /* SettingsView.swift in Sources */,
 				27BD7834263871AF0044BC3D /* ItemListEmptyView.swift in Sources */,
 				27E7AD6527ADDDF5002202DE /* Extensions.swift in Sources */,
 				2779D5DB272BD3AF004396F6 /* TabsView.swift in Sources */,
@@ -361,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stugreenham.Remember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -386,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stugreenham.Remember;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

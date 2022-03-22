@@ -34,10 +34,12 @@ struct WelcomeView: View {
 
                     Group {
                         Text("Stop forgeting, start ")
-                            .font(.title)
+                            //.font(.title)
+                            .font(.system(.title, design: .rounded))
                             .fontWeight(.heavy) +
                         Text("Remembering")
-                            .font(.title)
+                            //.font(.title)
+                            .font(.system(.title, design: .rounded))
                             .fontWeight(.heavy)
                             .foregroundColor(.colorBrand)
                     }

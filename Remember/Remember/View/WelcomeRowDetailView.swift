@@ -24,7 +24,8 @@ struct WelcomeRowDetailView: View {
 
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(.headline)
+                    //.font(.headline)
+                    .font(.system(.headline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                     .accessibility(addTraits: .isHeader)
