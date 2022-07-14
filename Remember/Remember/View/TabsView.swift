@@ -27,17 +27,12 @@ struct TabsView: View {
             
             ContentView(showArchived: false)
                 .tag(0)
-//                .tabItem {
-//                    Image(systemName: "bookmark.square")
-//                    Text("Items")
-//                }
             
             ContentView(showArchived: true)
                 .tag(1)
-//                .tabItem {
-//                    Image(systemName: "archivebox")
-//                    Text("Archive")
-//                }
+            
+//            SettingsView()
+//                .tag(2)
             
         }
         .overlay( // Overlay the custom TabView component here
@@ -46,7 +41,7 @@ struct TabsView: View {
                 .frame(height: 50) // Match Height of native bar
                 .shadow(color: .black.opacity(0.05), radius: 30, x: 0, y: -20)
                 .overlay(HStack {
-                    
+
                     Spacer()
 
                     // First Tab Button
@@ -73,8 +68,22 @@ struct TabsView: View {
                             .foregroundColor(Color.colorTabIcon)
                             .opacity(selection == 1 ? 1 : 0.4)
                     })
-                    
+
                     Spacer()
+                    
+//                    // Third Tab Button
+//                    Button(action: {
+//                        self.selection = 2
+//                    }, label: {
+//                        Image(systemName: "gearshape.fill")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 25, height: 25, alignment: .center)
+//                            .foregroundColor(Color.colorTabIcon)
+//                            .opacity(selection == 2 ? 1 : 0.4)
+//                    })
+//
+//                    Spacer()
 
                 })
         ,alignment: .bottom) // Align the overlay to bottom to ensure tab bar stays pinned.
